@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.mkyong.bean">
+
+    <class name="com.mkyong.bean.IdeaBean" table="T_IDEA">
+        <id name="id" column="ID" type="string">
+            <generator class="assigned"/>
+        </id>
+        <property name="title" type="string"/>
+        <property name="content" type="string"/>
+        <property name="simpleContent" type="string"/>
+        <property name="author" type="string"/>
+        <property name="like" type="int"/>
+        <property name="readCount" type="int"/>
+        <property name="publishDate" type="date"/>
+    </class>
+
+</hibernate-mapping> 
