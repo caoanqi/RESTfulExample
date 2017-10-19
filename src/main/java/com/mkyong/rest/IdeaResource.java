@@ -1,5 +1,6 @@
 package com.mkyong.rest;
 
+import com.mkyong.bean.BaseModel;
 import com.mkyong.bean.IdeaBean;
 import com.mkyong.dao.impl.IdeaDaoImpl;
 
@@ -17,10 +18,12 @@ public class IdeaResource {
     private IdeaDaoImpl ideaDao = new IdeaDaoImpl();
 
     @GET
-    @Produces({MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON})
-    public List<IdeaBean> getAll() {
-        List<IdeaBean> ideaBeans;
-        ideaBeans = ideaDao.getAllIdeas();
-        return ideaBeans;
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public BaseModel<List<IdeaBean>> getAll() {
+        BaseModel<List<IdeaBean>> listBaseModel = new BaseModel<List<IdeaBean>>();
+        listBaseModel.setCode(200);
+        listBaseModel.setMsg("success");
+        listBaseModel.setData(ideaDao.getAllIdeas());
+        return listBaseModel;
     }
 }

@@ -1,7 +1,5 @@
 package com.mkyong.bean;
 
-import com.mkyong.rest.BaseModel;
-
 public class Track {
 
     String title;

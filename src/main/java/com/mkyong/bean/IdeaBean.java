@@ -4,12 +4,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 
 @XmlRootElement
-public class IdeaBean {
-    public int getId() {
+public class IdeaBean{
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,11 +46,11 @@ public class IdeaBean {
         this.author = author;
     }
 
-    public int getLike() {
+    public Integer getLike() {
         return like;
     }
 
-    public void setLike(int like) {
+    public void setLike(Integer like) {
         this.like = like;
     }
 
@@ -61,20 +62,20 @@ public class IdeaBean {
         this.readCount = readCount;
     }
 
-    public Date getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
     }
 
-    private int id;
+    private String id;
     private String title;
     private String content;
     private String simpleContent;
     private String author;
-    private int like;
-    private int readCount;
-    private Date publishDate;
+    private Integer like;
+    private Integer readCount;
+    private String publishDate;
 }

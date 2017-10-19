@@ -14,9 +14,10 @@
         <property name="content" type="string"/>
         <property name="simpleContent" type="string"/>
         <property name="author" type="string"/>
-        <property name="like" type="int"/>
-        <property name="readCount" type="int"/>
-        <property name="publishDate" type="date"/>
+        <property name="like" type="integer"/>
+        <property name="readCount" type="integer"/>
+        <property name="publishDate" type="string"/>
+
     </class>
 
 </hibernate-mapping> 

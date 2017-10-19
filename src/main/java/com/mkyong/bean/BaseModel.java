@@ -1,6 +1,9 @@
-package com.mkyong.rest;
+package com.mkyong.bean;
 
-public class BaseModel<T> {
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class BaseModel<T>{
     private String msg;
     private int code;
     private T data;
