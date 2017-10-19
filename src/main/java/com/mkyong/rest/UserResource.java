@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  * 用户资源
- * @author waylau.com
  * 2014-3-19
  */
 @Path("/users")
