@@ -158,7 +158,7 @@ public class UserDaoImpl implements UserDao {
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
-            String hsql = "select * from t_user where userName = " + userName + " and " + "password = " + password;
+            String hsql = "select * from t_user where userName ='" + userName + "' and " + "password ='" + password + "'";
             Query query = s.createSQLQuery(hsql).addEntity(UserBean.class);
             userBean = (UserBean) query.uniqueResult();
             t.commit();

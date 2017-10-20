@@ -16,16 +16,18 @@ public class UserBean {
     private String password;
     private String nickName;
     private String token;
+    private String deviceId;
 
     public UserBean() {
     }
 
-    public UserBean(String userId, String userName, String age, String password,String token) {
+    public UserBean(String userId, String userName, String age, String password, String token, String deviceId) {
         this.userId = userId;
         this.userName = userName;
         this.age = age;
         this.password = password;
-        this.token=token;
+        this.token = token;
+        this.deviceId = deviceId;
     }
 
     public String getUserId() {
@@ -59,6 +61,7 @@ public class UserBean {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
+
     public String getPassword() {
         return password;
     }
@@ -75,5 +78,12 @@ public class UserBean {
         this.token = token;
     }
 
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
 
 }  

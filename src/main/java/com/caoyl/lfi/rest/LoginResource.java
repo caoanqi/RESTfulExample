@@ -5,17 +5,18 @@ import com.caoyl.lfi.bean.LoginBean;
 import com.caoyl.lfi.bean.UserBean;
 import com.caoyl.lfi.dao.impl.UserDaoImpl;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("login")
+@Path("/login")
 public class LoginResource extends BaseResouce {
     UserDaoImpl userDao = new UserDaoImpl();
 
     @POST
-    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public BaseBean<UserBean> login(LoginBean loginBean) {
         BaseBean<UserBean> baseBean = new BaseBean<UserBean>();
         if (loginBean != null) {
@@ -29,8 +30,8 @@ public class LoginResource extends BaseResouce {
                 userBean.setToken(buildToken);
                 boolean result = userDao.updateUser(userBean);
                 if (result) {
-                    baseBean.setCode(503);
-                    baseBean.setMsg("登录失败");
+                    baseBean.setCode(200);
+                    baseBean.setMsg("Success");
                     baseBean.setData(userBean);
                 } else {
                     baseBean.setCode(503);

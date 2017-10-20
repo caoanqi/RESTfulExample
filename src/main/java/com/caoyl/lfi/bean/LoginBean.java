@@ -1,11 +1,13 @@
 package com.caoyl.lfi.bean;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  * 登录参数
  */
-public class LoginBean {
+@XmlRootElement
+public class LoginBean implements Serializable {
     private String userName;
     private String password;
     private String deviceId;

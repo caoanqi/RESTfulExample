@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
  
-<hibernate-mapping package="com.mkyong.bean">
+<hibernate-mapping package="com.caoyl.lfi.bean">
 
     <class name="com.caoyl.lfi.bean.UserBean" table="T_USER">
         <id name="userId" column="USERID"  type="string" >
@@ -15,6 +15,7 @@
         <property name="password" type="string" />
         <property name="token" type="string" />
         <property name="nickName" type="string" />
+        <property name="deviceId" type="string" />
     </class>
  
 </hibernate-mapping> 

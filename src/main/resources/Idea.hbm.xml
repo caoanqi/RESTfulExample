@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 
-<hibernate-mapping package="com.mkyong.bean">
+<hibernate-mapping package="com.caoyl.lfi.bean">
 
     <class name="com.caoyl.lfi.bean.IdeaBean" table="T_IDEA">
         <id name="id" column="ID" type="string">
