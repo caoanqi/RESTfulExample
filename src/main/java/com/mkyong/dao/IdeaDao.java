@@ -1,7 +1,6 @@
 package com.mkyong.dao;
 
 import com.mkyong.bean.IdeaBean;
-import com.mkyong.bean.UserEntity;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.mkyong.dao.impl;
 
-import com.mkyong.bean.UserEntity;
+import com.mkyong.bean.UserBean;
 import com.mkyong.dao.UserDao;
 import com.mkyong.util.HibernateUtil;
 import org.hibernate.Query;
@@ -19,17 +19,17 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
 
     @Override
-    public UserEntity getUserById(String id) {
+    public UserBean getUserById(String id) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session s = null;
         Transaction t = null;
-        UserEntity userEntity = null;
+        UserBean userBean = null;
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
             String hsql = "select * from t_user where userId = "+ id;
-            Query query = s.createSQLQuery(hsql).addEntity(UserEntity.class);
-            userEntity = (UserEntity) query.uniqueResult();
+            Query query = s.createSQLQuery(hsql).addEntity(UserBean.class);
+            userBean = (UserBean) query.uniqueResult();
             t.commit();
         } catch (Exception err) {
             t.rollback();
@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
         } finally {
             s.close();
         }
-        return userEntity;
+        return userBean;
     }
 
     @Override
@@ -49,9 +49,9 @@ public class UserDaoImpl implements UserDao {
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
-            UserEntity userEntity = new UserEntity();
-            userEntity.setUserId(id);
-            s.delete(userEntity);
+            UserBean userBean = new UserBean();
+            userBean.setUserId(id);
+            s.delete(userBean);
             t.commit();
             flag = true;
         } catch (Exception err) {
@@ -64,7 +64,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean createUser(UserEntity userEntity) {
+    public boolean createUser(UserBean userBean) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session s = null;
         Transaction t = null;
@@ -72,7 +72,7 @@ public class UserDaoImpl implements UserDao {
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
-            s.save(userEntity);
+            s.save(userBean);
             t.commit();
             flag = true;
         } catch (Exception err) {
@@ -85,7 +85,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean updateUser(UserEntity userEntity) {
+    public boolean updateUser(UserBean userBean) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session s = null;
         Transaction t = null;
@@ -93,7 +93,7 @@ public class UserDaoImpl implements UserDao {
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
-            s.update(userEntity);
+            s.update(userBean);
             t.commit();
             flag = true;
         } catch (Exception err) {
@@ -106,16 +106,16 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<UserEntity> getAllUsers() {
+    public List<UserBean> getAllUsers() {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session s = null;
         Transaction t = null;
-        List<UserEntity> uesrs = null;
+        List<UserBean> uesrs = null;
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
             String hql = "select * from t_user";
-            Query query = s.createSQLQuery(hql).addEntity(UserEntity.class);
+            Query query = s.createSQLQuery(hql).addEntity(UserBean.class);
             query.setCacheable(true); // 设置缓存
             uesrs = query.list();
             t.commit();

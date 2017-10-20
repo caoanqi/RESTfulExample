@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlRootElement;
  * 2014-7-24
  */
 @XmlRootElement  
-public class UserEntity {
+public class UserBean {
 
     private String userId;  
     private String userName;  
     private String age;  
 
-    public UserEntity() {};
+    public UserBean() {};
 
-    public UserEntity(String userId, String userName, String age) {
+    public UserBean(String userId, String userName, String age) {
         this.userId = userId;  
         this.userName = userName;  
         this.age = age;  

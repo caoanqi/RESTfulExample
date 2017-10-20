@@ -1,7 +1,7 @@
 package com.mkyong.rest;
 
 
-import com.mkyong.bean.UserEntity;
+import com.mkyong.bean.UserBean;
 import com.mkyong.dao.impl.UserDaoImpl;
 
 import javax.ws.rs.*;
@@ -18,13 +18,13 @@ public class UserResource {
 	private UserDaoImpl userDaoImpl = new UserDaoImpl();
 	/**
 	 * 增加
-	 * @param userEntity
+	 * @param userBean
 	 */
 	@POST
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void createUser(UserEntity userEntity)
+    public void createUser(UserBean userBean)
     {
-		userDaoImpl.createUser(userEntity);
+		userDaoImpl.createUser(userBean);
     }
 	
 	/**
@@ -39,12 +39,12 @@ public class UserResource {
     
     /**
      * 修改
-     * @param userEntity
+     * @param userBean
      */
     @PUT
     @Consumes(MediaType.APPLICATION_XML)
-    public void updateUser(UserEntity userEntity){
-		userDaoImpl.updateUser(userEntity);
+    public void updateUser(UserBean userBean){
+		userDaoImpl.updateUser(userBean);
     }
  
     /**
@@ -55,8 +55,8 @@ public class UserResource {
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public UserEntity getUserById(@PathParam("id") String id){
-    	UserEntity u = userDaoImpl.getUserById(id);
+    public UserBean getUserById(@PathParam("id") String id){
+    	UserBean u = userDaoImpl.getUserById(id);
     	return u;
     }
    
@@ -66,8 +66,8 @@ public class UserResource {
      */
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<UserEntity> getAllUsers(){
-    	List<UserEntity> userEntities = new ArrayList<UserEntity>();
+    public List<UserBean> getAllUsers(){
+    	List<UserBean> userEntities = new ArrayList<UserBean>();
     	userEntities = userDaoImpl.getAllUsers();
         return userEntities;
     }

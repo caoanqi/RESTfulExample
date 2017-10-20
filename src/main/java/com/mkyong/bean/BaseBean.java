@@ -3,7 +3,7 @@ package com.mkyong.bean;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class BaseModel<T>{
+public class BaseBean<T>{
     private String msg;
     private int code;
     private T data;
