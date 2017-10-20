@@ -12,6 +12,9 @@
         </id>
         <property name="userName" type="string" />
         <property name="age" type="string" />
+        <property name="password" type="string" />
+        <property name="token" type="string" />
+        <property name="nickName" type="string" />
     </class>
  
 </hibernate-mapping> 

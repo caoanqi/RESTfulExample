@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
         try {
             s = sessionFactory.openSession();
             t = s.beginTransaction();
-            String hsql = "select * from t_user where userId = "+ id;
+            String hsql = "select * from t_user where userId = " + id;
             Query query = s.createSQLQuery(hsql).addEntity(UserBean.class);
             userBean = (UserBean) query.uniqueResult();
             t.commit();
@@ -126,6 +126,49 @@ public class UserDaoImpl implements UserDao {
             s.close();
         }
         return uesrs;
+    }
+
+
+    public UserBean getUserWithUserName(String userName) {
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        Session s = null;
+        Transaction t = null;
+        UserBean userBean = null;
+        try {
+            s = sessionFactory.openSession();
+            t = s.beginTransaction();
+            String hsql = "select * from t_user where userName = " + userName;
+            Query query = s.createSQLQuery(hsql).addEntity(UserBean.class);
+            userBean = (UserBean) query.uniqueResult();
+            t.commit();
+        } catch (Exception err) {
+            t.rollback();
+            err.printStackTrace();
+        } finally {
+            s.close();
+        }
+        return userBean;
+    }
+
+    public UserBean getUserWithUserNameAndPwd(String userName, String password) {
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        Session s = null;
+        Transaction t = null;
+        UserBean userBean = null;
+        try {
+            s = sessionFactory.openSession();
+            t = s.beginTransaction();
+            String hsql = "select * from t_user where userName = " + userName + " and " + "password = " + password;
+            Query query = s.createSQLQuery(hsql).addEntity(UserBean.class);
+            userBean = (UserBean) query.uniqueResult();
+            t.commit();
+        } catch (Exception err) {
+            t.rollback();
+            err.printStackTrace();
+        } finally {
+            s.close();
+        }
+        return userBean;
     }
 
 }
