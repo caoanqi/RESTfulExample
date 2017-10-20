@@ -1,8 +1,8 @@
-package com.mkyong.rest;
+package com.caoyl.lfi.rest;
 
 
-import com.mkyong.bean.UserBean;
-import com.mkyong.dao.impl.UserDaoImpl;
+import com.caoyl.lfi.bean.UserBean;
+import com.caoyl.lfi.dao.impl.UserDaoImpl;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

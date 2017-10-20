@@ -1,8 +1,8 @@
-package com.mkyong.dao.impl;
+package com.caoyl.lfi.dao.impl;
 
-import com.mkyong.bean.UserBean;
-import com.mkyong.dao.UserDao;
-import com.mkyong.util.HibernateUtil;
+import com.caoyl.lfi.bean.UserBean;
+import com.caoyl.lfi.dao.UserDao;
+import com.caoyl.lfi.util.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

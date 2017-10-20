@@ -1,6 +1,6 @@
-package com.mkyong.dao;
+package com.caoyl.lfi.dao;
 
-import com.mkyong.bean.IdeaBean;
+import com.caoyl.lfi.bean.IdeaBean;
 
 import java.util.List;
 

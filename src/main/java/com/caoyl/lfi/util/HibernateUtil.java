@@ -1,4 +1,4 @@
-package com.mkyong.util;
+package com.caoyl.lfi.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;

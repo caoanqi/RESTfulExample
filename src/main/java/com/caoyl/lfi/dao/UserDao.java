@@ -1,7 +1,7 @@
-package com.mkyong.dao;
+package com.caoyl.lfi.dao;
 
 
-import com.mkyong.bean.UserBean;
+import com.caoyl.lfi.bean.UserBean;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.mkyong.util;
+package com.caoyl.lfi.util;
 
 import java.security.MessageDigest;
 

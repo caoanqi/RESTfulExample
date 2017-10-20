@@ -5,7 +5,7 @@
  * @author waylau.com
  * 2014-7-24
  */
-package com.mkyong.rest;
+package com.caoyl.lfi.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

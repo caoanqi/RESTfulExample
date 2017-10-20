@@ -6,7 +6,7 @@
  
 <hibernate-mapping package="com.mkyong.bean">
 
-    <class name="UserBean" table="T_USER">
+    <class name="com.caoyl.lfi.bean.UserBean" table="T_USER">
         <id name="userId" column="USERID"  type="string" >
             <generator class="assigned"/>
         </id>

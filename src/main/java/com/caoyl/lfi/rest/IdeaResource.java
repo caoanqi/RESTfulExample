@@ -1,8 +1,8 @@
-package com.mkyong.rest;
+package com.caoyl.lfi.rest;
 
-import com.mkyong.bean.BaseBean;
-import com.mkyong.bean.IdeaBean;
-import com.mkyong.dao.impl.IdeaDaoImpl;
+import com.caoyl.lfi.dao.impl.IdeaDaoImpl;
+import com.caoyl.lfi.bean.BaseBean;
+import com.caoyl.lfi.bean.IdeaBean;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

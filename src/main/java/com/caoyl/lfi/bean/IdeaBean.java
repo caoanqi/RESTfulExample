@@ -1,4 +1,4 @@
-package com.mkyong.bean;
+package com.caoyl.lfi.bean;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;

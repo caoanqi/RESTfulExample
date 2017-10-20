@@ -1,9 +1,9 @@
-package com.mkyong.rest;
+package com.caoyl.lfi.rest;
 
-import com.mkyong.bean.BaseBean;
-import com.mkyong.bean.LoginBean;
-import com.mkyong.bean.UserBean;
-import com.mkyong.dao.impl.UserDaoImpl;
+import com.caoyl.lfi.bean.BaseBean;
+import com.caoyl.lfi.bean.LoginBean;
+import com.caoyl.lfi.bean.UserBean;
+import com.caoyl.lfi.dao.impl.UserDaoImpl;
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;

@@ -1,10 +1,8 @@
-package com.mkyong.rest;
+package com.caoyl.lfi.rest;
 
-import com.mkyong.bean.UserBean;
-import com.mkyong.dao.impl.UserDaoImpl;
-import com.mkyong.util.MD5Util;
-import javafx.scene.text.Text;
-import sun.security.provider.MD5;
+import com.caoyl.lfi.bean.UserBean;
+import com.caoyl.lfi.dao.impl.UserDaoImpl;
+import com.caoyl.lfi.util.MD5Util;
 
 public class BaseResouce {
 
